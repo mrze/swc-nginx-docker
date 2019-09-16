@@ -1,0 +1,2 @@
+# my vm is called "sovereign". Replace with your hostname.
+openssl req -x509 -out sovereign.crt -keyout sovereign.key -newkey rsa:2048 -nodes -sha256 -subj '/CN=sovereign' -extensions EXT -config <(printf "[dn]\nCN=sovereign\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:sovereign\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
